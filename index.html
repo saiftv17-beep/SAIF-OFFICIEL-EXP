@@ -1,39 +1,0 @@
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ultra VIP Tracker</title>
-<link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-<div class="login" id="loginBox">
-    <h2>Ultra VIP Login 👑</h2>
-    <input type="text" id="username" placeholder="اسم المستخدم">
-    <input type="password" id="password" placeholder="كلمة السر">
-    <button onclick="login()">دخول</button>
-    <p id="loginError"></p>
-</div>
-
-<div class="panel hidden" id="panel">
-
-    <div class="top-bar">
-        <button onclick="toggleTheme()">🌙 / ☀️</button>
-        <button onclick="logout()">تسجيل خروج</button>
-    </div>
-
-    <h2>إضافة حساب جديد</h2>
-    <input type="text" id="newUid" placeholder="ادخل UID">
-    <button onclick="addTracker()">إضافة للتتبع</button>
-
-    <hr>
-
-    <div id="trackers"></div>
-
-</div>
-
-<script src="script.js"></script>
-</body>
-</html>
