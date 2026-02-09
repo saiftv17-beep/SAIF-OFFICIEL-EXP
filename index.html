@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VIP Tracker VVIP</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- LOGIN -->
+<div id="loginBox" class="login-box">
+    <h2>🎮 VIP LOGIN</h2>
+    <input id="user" placeholder="اسم المستخدم">
+    <input id="pass" type="password" placeholder="كلمة المرور">
+    <button onclick="login()">دخول</button>
+</div>
+
+<!-- PANEL -->
+<div id="panel" style="display:none;">
+    <div class="topbar">
+        <h1>🔥 VIP Tracker</h1>
+        <button onclick="logout()">تسجيل خروج</button>
+    </div>
+
+    <div class="add-box">
+        <input id="uidInput" placeholder="أدخل UID">
+        <button onclick="addUID()">➕ إضافة</button>
+    </div>
+
+    <div id="trackers"></div>
+</div>
+
+<!-- LOGIN SCRIPT (غير module) -->
+<script src="login.js"></script>
+
+<!-- MAIN TRACKER -->
+<script type="module" src="tracker.js"></script>
+
+</body>
+</html>
