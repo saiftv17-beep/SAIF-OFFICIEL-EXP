@@ -1,0 +1,29 @@
+{% with messages = get_flashed_messages() %}
+
+{% if messages %}
+
+<div class="message">
+
+{{ messages[0] }}
+
+</div>
+
+{% endif %}
+
+{% endwith %}
+
+<form method="POST">
+
+    <input
+        type="text"
+        name="license"
+        placeholder="License Key"
+        required>
+
+    <button>
+
+        دخول
+
+    </button>
+
+</form>
