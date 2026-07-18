@@ -1,0 +1,119 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="container">
+
+    <h1>👑 لوحة الإدارة</h1>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>عدد الاشتراكات</h3>
+            <span>{{ licenses|length }}</span>
+        </div>
+
+        <div class="card">
+            <h3>الحالة</h3>
+            <span>🟢 Online</span>
+        </div>
+
+    </div>
+
+    <div class="create-box">
+
+        <h2>➕ إنشاء اشتراك</h2>
+
+        <form action="/admin/create" method="POST">
+
+            <label>مدة الاشتراك</label>
+
+            <select name="days">
+
+                <option value="3">3 أيام</option>
+
+                <option value="7">7 أيام</option>
+
+                <option value="30">30 يوم</option>
+
+                <option value="90">90 يوم</option>
+
+            </select>
+
+            <label>الحد اليومي</label>
+
+            <input
+                type="number"
+                name="limit"
+                value="10"
+                required>
+
+            <button type="submit">
+
+                إنشاء
+
+            </button>
+
+        </form>
+
+    </div>
+
+    <div class="table-box">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>الكود</th>
+
+                    <th>الحد اليومي</th>
+
+                    <th>ينتهي</th>
+
+                    <th>الحالة</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+            {% for item in licenses %}
+
+                <tr>
+
+                    <td>{{ item.license_key }}</td>
+
+                    <td>{{ item.daily_limit }}</td>
+
+                    <td>{{ item.expires_at }}</td>
+
+                    <td>
+
+                    {% if item.active %}
+
+                    🟢
+
+                    {% else %}
+
+                    🔴
+
+                    {% endif %}
+
+                    </td>
+
+                </tr>
+
+            {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+{% endblock %}
