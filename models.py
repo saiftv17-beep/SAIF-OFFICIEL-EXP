@@ -21,6 +21,12 @@ class License(db.Model):
 
     last_reset = db.Column(db.DateTime, default=datetime.utcnow)
 
+name = db.Column(db.String(100), default="")
+
+notes = db.Column(db.Text, default="")
+
+created_by = db.Column(db.String(50), default="admin")
+
 
 class UID(db.Model):
     __tablename__ = "uids"

@@ -35,3 +35,7 @@ class Config:
         "PLAYER_INFO_API",
         "https://accinfo.vercel.app/player-info"
     )
+
+    # بيانات المدير
+    ADMIN_USERNAME = os.getenv("ADMIN_USERNAME")
+    ADMIN_PASSWORD = os.getenv("ADMIN_PASSWORD")
